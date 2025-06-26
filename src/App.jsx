@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Header from './components/Header'
 import './styles/App.scss'
 
 function App() {
@@ -15,7 +16,7 @@ const [AllCharacters, setAllCharacters] = useState([])
   }, [])
   return (
     <>
-    
+    <Header />
     </>
   )
 }
