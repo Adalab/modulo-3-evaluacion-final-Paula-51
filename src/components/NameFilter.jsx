@@ -1,17 +1,20 @@
 import '../styles/Filters.scss'
 
-function NameFilter() {
-    return (
-      <div className="input-container">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Nombre del personaje"
-          className="input-house"
-        />
-      </div>
-    );
-  }
-  
-  export default NameFilter;
+function NameFilter({ searchName, onSearchChange }) {
+  return (
+    <div className="input-container">
+      <label htmlFor="name">Busca por personaje:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        className="input-house"
+        placeholder="Nombre del personaje"
+        value={searchName}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
+    </div>
+  );
+}
+
+export default NameFilter;

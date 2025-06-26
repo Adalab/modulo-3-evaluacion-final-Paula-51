@@ -1,0 +1,31 @@
+.hogwarts-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 180px;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    color: #fff;
+  
+    .hogwarts-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+  
+    .hogwarts-info {
+      padding: 1rem;
+      background-color: #d4af37;
+  
+      h3 {
+        font-size: 1.1rem;
+        margin: 0 0 0.5rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+  }
+  
