@@ -9,6 +9,7 @@ function App() {
   const [AllCharacters, setAllCharacters] = useState([]);
   const [searchName, setSearchName] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('ALL');
+  
 
   useEffect(() => {
     fetch('https://hp-api.onrender.com/api/characters')
@@ -21,13 +22,18 @@ function App() {
     const houseMatch = selectedHouse === 'ALL' || character.house === selectedHouse;
     return nameMatch && houseMatch;
   });
+  const handleCardClick = () => {setSearchName('');
+  };
+  
+  
 
   return (
     <>
       <Header />
       <NameFilter searchName={searchName} onSearchChange={setSearchName} />
       <HouseFilter selectedHouse={selectedHouse} onChangeHouse={setSelectedHouse} />
-      <HogwartsGrid characters={filteredCharacters} />
+      <HogwartsGrid characters={filteredCharacters} onCardClick={handleCardClick} />
+
     </>
   );
 }
