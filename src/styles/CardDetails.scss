@@ -2,20 +2,22 @@
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     overflow: hidden;
-    width: 180px;
-    text-align: center;
-    font-family: 'EB Garamond', serif;
-    color: #fff;
+    width: 280px;
+    max-height: fit-content;
+    text-align: center; 
+    font-family: 'Crismon Pro', serif;
+    color: #ffffff;
+    border: 2px solid #6f6f6f;
   
     .hogwarts-img {
       width: 100%;
-      height: 240px;
+      height: auto;
       object-fit: cover;
     }
   
     .hogwarts-info {
       padding: 1rem;
-      background-color: #d4af37;
+      background-color: #1d1d1d;
   
       h3 {
         font-size: 1.1rem;

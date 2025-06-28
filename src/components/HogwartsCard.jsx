@@ -11,6 +11,8 @@ function HogwartsCard({ character }) {
       <div className="hogwarts-info">
         <h3>{character.name}</h3>
         <p>{character.species}</p>
+        <p>{character.house}</p>
+
       </div>
     </article>
   );

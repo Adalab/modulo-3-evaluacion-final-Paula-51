@@ -2,7 +2,7 @@ import '../styles/Filters.scss'
 
 function NameFilter({ searchName, onSearchChange }) {
   return (
-    <div className="input-container">
+    <form className="input-container">
       <label htmlFor="name">Busca por personaje:</label>
       <input
         type="text"
@@ -13,7 +13,7 @@ function NameFilter({ searchName, onSearchChange }) {
         value={searchName}
         onChange={(e) => onSearchChange(e.target.value)}
       />
-    </div>
+    </form>
   );
 }
 
