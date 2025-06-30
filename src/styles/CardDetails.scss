@@ -5,7 +5,8 @@
     width: 280px;
     max-height: fit-content;
     text-align: center; 
-    font-family: 'Crismon Pro', serif;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none ;
     color: #ffffff;
     border: 2px solid #6f6f6f;
   
@@ -31,33 +32,5 @@
     }
   }
   
-  .character-detail.gryffindor {
-    background: linear-gradient(to bottom, #740001, #ae0001); // Granate oscuro
-    color: #fff;
-  }
-  
-  .character-detail.slytherin {
-    background: linear-gradient(to bottom, #1a472a, #2a623d); // Verde Slytherin
-    color: #fff;
-  }
-  
-  .character-detail.hufflepuff {
-    background: linear-gradient(to bottom, #ffdb00, #ecb939); // Amarillo Hufflepuff
-    color: #000;
-  }
-  
-  .character-detail.ravenclaw {
-    background: linear-gradient(to bottom, #0e1a40, #222f5b); // Azul Ravenclaw
-    color: #fff;
-  }
-  
-  .character-detail.no-house {
-    background: linear-gradient(to bottom, #f4f1e9, #e9dbc5); // Fondo por defecto
-  }
-  
-  .house-crest {
-    width: 80px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
+
   
