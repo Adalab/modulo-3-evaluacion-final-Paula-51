@@ -1,67 +1,75 @@
 .character-detail {
-    max-width: 600px;
-    margin: 3rem auto;
-    padding: 2rem;
-    border: 4px double #5a381e;
-    border-radius: 20px;
-    background: linear-gradient(to bottom, #f4f1e9, #e9dbc5);
-    box-shadow: 0 0 20px rgba(91, 64, 33, 0.5);
-    font-family: 'EB Garamond', serif;
-    color: #3e2f1c;
-    text-align: center;
-    position: relative;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding-inline: 5rem;
+  padding-block: 2rem;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #f4f1e9, #e9dbc5);
+  box-shadow: 0 0 20px rgba(91, 64, 33, 0.5);
+  font-family: 'Roboto', sans-serif;
+  color: #3e2f1c;
+  text-align: left;
+  position: relative;}
   
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+
+.card-detail.horizontal-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: start;
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .house-crest {
+      width: 80px;
+      margin-top: -3rem;
     }
+  }
+  .detail-img {
+    width: 180px;
+    height: 240px;
+    margin-top: 15px;
+    object-fit: cover;
+    border: 3px solid #5a381e;
+    border-radius: 1rem;
+    background-color: #d6c5a9;
+  }
   
-    img {
-      width: 200px;
-      height: auto;
-      border: 3px solid #5a381e;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-      background-color: #d6c5a9;
-      object-fit: cover;
-    }
-  
+  .right-side {
+    flex: 1;
+
     ul {
       list-style: none;
       padding: 0;
-      font-size: 1.1rem;
-      text-align: left;
-  
+
       li {
         margin: 0.5rem 0;
-        padding: 0.4rem 0.6rem;
         background-color: rgba(255, 255, 255, 0.6);
+        padding: 0.4rem 0.6rem;
         border-radius: 8px;
         box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
-  
-        strong {
-          font-weight: bold;
-          color: #2b1c10;
-        }
       }
     }
-  
-    .not-found {
-      color: darkred;
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-  
-    // Opcional: un pequeño toque mágico
-    &::before {
-      content: '🪄';
-      font-size: 3rem;
-      position: absolute;
-      top: -1.5rem;
-      left: -1.5rem;
-    }
   }
-  
-  
+}
+
+.character-detail.gryffindor {
+  background: linear-gradient(to right, #7f0909, 
+  #f90000);
+  color: #fff;
+}
+.character-detail.slytherin {
+  background: linear-gradient(to right, #0d6217, #aaaaaa);
+  color: #fff;
+}
+.character-detail.hufflepuff {
+  background: linear-gradient(to right, #ecb939, #60605c);
+  color: #000;
+}
+.character-detail.ravenclaw {
+  background: linear-gradient(to right, #222f5b, #946b2d);
+  color: #fff;
+}

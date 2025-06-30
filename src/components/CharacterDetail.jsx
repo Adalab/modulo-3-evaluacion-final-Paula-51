@@ -13,7 +13,19 @@ function CharacterDetail({ characters }) {
       </section>
     );
   }
+// Añade esta función para asignar clases por casa
+const getHouseClass = (house) => {
+  switch (house) {
+    case 'Gryffindor': return 'gryffindor';
+    case 'Slytherin': return 'slytherin';
+    case 'Hufflepuff': return 'hufflepuff';
+    case 'Ravenclaw': return 'ravenclaw';
+    default: return '';
+  }
+};
 
+
+// Extrae los datos del personaje
   const {
     name,
     image,
@@ -23,26 +35,38 @@ function CharacterDetail({ characters }) {
     alive,
   } = character;
 
-  const defaultImage = '/images/have-you-seen-this-wizard.png'; 
+  const defaultImage = '/images/have-you-seen-this-wizard.png'; // imagen relleno
 
   return (
-    <section className="character-detail">
+    <section className={`character-detail ${getHouseClass(house)}`}>
       <Link to="/" className="back-btn">← Volver</Link>
-      <div className="card-detail">
-        <img
-          src={image || defaultImage}
-          alt={name}
-          className="detail-img"
-        />
-        <div className="detail-info">
+      <div className="card-detail horizontal-layout">
+        <div className="left-side">
+          <img
+            src={image || defaultImage}
+            alt={name}
+            className="detail-img"
+          />
+          {house && (
+            <img
+              src={`/images/${house.toLowerCase()}.png`}
+              alt={`Escudo de ${house}`}
+              className="house-crest"
+            />
+          )}
+        </div>
+        <div className="right-side">
           <h2>{name}</h2>
-          <p><strong>Casa:</strong> {house || 'Desconocida'}</p>
-          <p><strong>Género:</strong> {gender}</p>
-          <p><strong>Especie:</strong> {species}</p>
-          <p><strong>Estado:</strong> {alive ? 'Vivo/a' : 'Muerto/a'}</p>
+          <ul>
+            <li><strong>Casa:</strong> {house || 'Desconocida'}</li>
+            <li><strong>Género:</strong> {gender}</li>
+            <li><strong>Especie:</strong> {species}</li>
+            <li><strong>Estado:</strong> {alive ? 'Vivo/a' : 'Muerto/a'}</li>
+          </ul>
         </div>
       </div>
-    </section>
+  </section>
+
   );
 }
 
