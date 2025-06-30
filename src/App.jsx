@@ -13,7 +13,7 @@ function App() {
   const [searchName, setSearchName] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('ALL');
 
-  // ✅ Cargar personajes con IDs únicos
+  // Cargar personajes con IDs únicos
   useEffect(() => {
     fetch('https://hp-api.onrender.com/api/characters')
       .then((response) => response.json())
@@ -26,14 +26,14 @@ function App() {
       });
   }, []);
 
-  // ✅ Filtrar por nombre y casa
+  // Filtrar por nombre y casa
   const filteredCharacters = allCharacters.filter((character) => {
     const nameMatch = character.name.toLowerCase().includes(searchName.toLowerCase());
     const houseMatch = selectedHouse === 'ALL' || character.house === selectedHouse;
     return nameMatch && houseMatch;
   });
 
-  // ✅ Limpiar búsqueda al hacer clic
+  //Limpiar búsqueda al hacer clic
   const handleCardClick = () => {
     setSearchName('');
   };
@@ -50,11 +50,9 @@ function App() {
               <HouseFilter selectedHouse={selectedHouse} onChangeHouse={setSelectedHouse} />
               <HogwartsGrid
                 characters={filteredCharacters}
-                onCardClick={handleCardClick}
-              />
+                onCardClick={handleCardClick}/>
             </>
-          }
-        />
+          } />
         <Route path="/character/:id" element={<CharacterDetail characters={allCharacters} />} />
       </Routes>
     </Router>
