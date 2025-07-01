@@ -5,7 +5,6 @@ import NameFilter from './components/NameFilter';
 import HouseFilter from './components/HouseFilter';
 import HogwartsGrid from './components/HogwartsGrid';
 import CharacterDetail from './components/CharacterDetail';
-
 import './styles/App.scss';
 
 function App() {
@@ -39,23 +38,26 @@ function App() {
   };
 
   return (
-    <Router>
-      <Header />
-      <Routes>
+    <Routes>
+    
+      
+      
         <Route
-          path="/"
+          index
           element={
             <>
+            <Header />
               <NameFilter searchName={searchName} onSearchChange={setSearchName} />
               <HouseFilter selectedHouse={selectedHouse} onChangeHouse={setSelectedHouse} />
               <HogwartsGrid
                 characters={filteredCharacters}
-                onCardClick={handleCardClick}/>
-            </>
-          } />
+                onCardClick={handleCardClick}/>  </> }/>
+
+               
         <Route path="/character/:id" element={<CharacterDetail characters={allCharacters} />} />
+      
       </Routes>
-    </Router>
+    
   );
 }
 

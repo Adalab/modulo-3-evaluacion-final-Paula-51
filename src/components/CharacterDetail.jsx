@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import '../styles/CharacterDetail.scss';
+import Header from './Header';
 
 function CharacterDetail({ characters }) {
   const { id } = useParams();
@@ -38,6 +39,9 @@ const getHouseClass = (house) => {
   const defaultImage = '/images/have-you-seen-this-wizard.png'; // imagen relleno
 
   return (
+  <>
+    <Header/>
+  
     <section className={`character-detail ${getHouseClass(house)}`}>
       <Link to="/" className="back-btn">← Volver</Link>
       <div className="card-detail horizontal-layout">
@@ -49,7 +53,7 @@ const getHouseClass = (house) => {
           />
           {house && (
             <img
-              src={`/images/${house.toLowerCase()}.png`}
+              src={`./images/${house.toLowerCase()}.png`}
               alt={`Escudo de ${house}`}
               className="house-crest"
             />
@@ -66,7 +70,7 @@ const getHouseClass = (house) => {
         </div>
       </div>
   </section>
-
+</>
   );
 }
 
